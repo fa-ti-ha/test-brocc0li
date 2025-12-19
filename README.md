@@ -52,7 +52,22 @@
     - [Code](#divided-difference-code)
     - [Input](#divided-difference-input)
     - [Output](#divided-difference-output)
+
+
  
+- [Integration Methods](#solution-of-numerical-integrations)
+  - [Simpson's One-Third Rule](#simpsons-one-third-rule)
+    - [Theory](#simpsons-one-third-rule-theory)
+    - [Code](#simpsons-one-third-rule-code)
+    - [Input](#simpsons-one-third-rule-input)
+    - [Output](#simpsons-one-third-rule-output)
+  - [Simpson's Three-Eighths Rule](#simpsons-three-eighths-rule)
+    - [Theory](#simpsons-three-eighths-rule-theory)
+    - [Code](#simpsons-three-eighths-rule-code)
+    - [Input](#simpsons-three-eighths-rule-input)
+    - [Output](#simpsons-three-eighths-rule-output)
+  
+
 ---
 
 ## Solution of Linear Equations
