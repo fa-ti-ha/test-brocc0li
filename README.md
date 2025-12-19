@@ -70,4 +70,52 @@
 
 ---
 
-## Linear Equations
+## Non Linear Methods
+
+
+
+## Integration Method
+
+### Simpson's One-Third Rule
+
+### Simpson's One-Third Rule Theory
+
+
+### Simpson's One-Third Rule Code
+```cpp
+
+```
+
+### Simpson's One-Third Rule Input
+```
+[Add your input format here]
+```
+
+### Simpson's One-Third Rule Output
+```
+[Add your output format here]
+```
+
+---
+
+### Simpson's Three-Eighths Rule 
+
+### Simpson's Three-Eighths Rule Theory
+[Add your theory content here]
+
+### Simpson's Three-Eighths Rule Code
+```cpp
+# Add your code here
+```
+
+### Simpson's Three-Eighths Rule Input
+```
+[Add your input format here]
+```
+
+### Simpson's Three-Eighths Rule Output
+```
+[Add your output format here]
+```
+
+---
