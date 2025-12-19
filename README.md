@@ -2,58 +2,6 @@
 
 ## Table of Contents
 
-
-- [Non Linear Methods](#non-linear-methods)
-  - [Bisection Method](#bisection-method)
-    - [Theory](#bisection-method-theory)
-    - [Code](#bisection-code)
-    - [Input](#bisection-input)
-    - [Output](#bisection-output)
-  - [False Position Method](#false-position-method)
-    - [Theory](#false-position-theory)
-    - [Code](#false-position-code)
-    - [Input](#false-position-input)
-    - [Output](#false-position-output)
-  - [Secant Method](#secant-method)
-    - [Theory](#secant-theory)
-    - [Code](#secant-code)
-    - [Input](#secant-input)
-    - [Output](#secant-output)
-  - [Newton Raphson Method](#newton-raphson-method)
-    - [Theory](#newton-raphson-theory)
-    - [Code](#newton-raphson-code)
-    - [Input](#newton-raphson-input)
-    - [Output](#newton-raphson-output)
-
-
-
-- [Linear Methods](#linear-methods)
-  
-  - [LU Decomposition Method](#lu-decomposition-method)
-    - [Theory](#lu-decomposition-theory)
-    - [Code](#lu-decomposition-code)
-    - [Input](#lu-decomposition-input)
-    - [Output](#lu-decomposition-output)
-   
-
-- [Interpolation Methods](#solution-of-interpolation)
-  - [Newton's Forward Interpolation Method](#newtons-forward-interpolation-method)
-    - [Theory](#newtons-forward-interpolation-theory)
-    - [Code](#newtons-forward-interpolation-code)
-    - [Input](#newtons-forward-interpolation-input)
-    - [Output](#newtons-forward-interpolation-output)
-  - [Newton's Backward Interpolation Method](#newtons-backward-interpolation-method)
-    - [Theory](#newtons-backward-interpolation-theory)
-    - [Code](#newtons-backward-interpolation-code)
-    - [Input](#newtons-backward-interpolation-input)
-    - [Output](#newtons-backward-interpolation-output)
-  - [Divided Difference Method](#divided-difference-method)
-    - [Theory](#divided-difference-theory)
-    - [Code](#divided-difference-code)
-    - [Input](#divided-difference-input)
-    - [Output](#divided-difference-output)
-
-
  
 - [Integration Method](#integration-method)
   - [Simpson's One-Third Rule](#simpsons-one-third-rule)
@@ -71,24 +19,6 @@
 ---
 
 ## Non Linear Methods
-
-### Bisection Method
-
-### Bisection Method Theory
-
-The bisection method is a numerical approach used to locate a real root of a nonlinear equation f(x) = 0. It relies on the fact that a continuous function must cross the x-axis if it changes sign over an interval. Starting from two points that lie on opposite sides of the root, the method gradually narrows the interval until the root is sufficiently approximated. Because the root always remains within the chosen interval, this method is considered very stable and reliable.
-
-
-At each step, the current interval is divided into two equal halves. One half is discarded based on the sign of the function, and the remaining half continues to contain the root. This repeated narrowing continues until the approximation meets the required accuracy.
-
-#### Basic Formula
-
-
-Midpoint Calculation:
-```
-c = (a + b) / 2
-
-```
 
 
 
