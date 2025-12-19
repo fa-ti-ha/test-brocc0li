@@ -3,7 +3,7 @@
 # Table of Contents
 
 
-- [Linear Methods](#solution-of-non-linear-equations)
+- [Non Linear Methods](#solution-of-non-linear-equations)
   - [Bisection Method](#bisection-method)
     - [Theory](#bisection-theory)
     - [Code](#bisection-code)
