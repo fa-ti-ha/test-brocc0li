@@ -3,9 +3,9 @@
 ## Table of Contents
 
 
-- [Non Linear Methods](#solution-of-non-linear-equations)
+- [Non Linear Methods](#non-linear-methods)
   - [Bisection Method](#bisection-method)
-    - [Theory](#bisection-theory)
+    - [Theory](#bisection-method-theory)
     - [Code](#bisection-code)
     - [Input](#bisection-input)
     - [Output](#bisection-output)
@@ -55,7 +55,7 @@
 
 
  
-- [Integration Methods](#solution-of-numerical-integrations)
+- [Integration Method](#integration-method)
   - [Simpson's One-Third Rule](#simpsons-one-third-rule)
     - [Theory](#simpsons-one-third-rule-theory)
     - [Code](#simpsons-one-third-rule-code)
