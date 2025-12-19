@@ -1,6 +1,5 @@
 # Numerical Methods
 
-```
 ## Table of Contents
 
 
