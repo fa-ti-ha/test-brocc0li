@@ -1,6 +1,7 @@
 # Numerical Methods
 
-# Table of Contents
+```
+## Table of Contents
 
 
 - [Non Linear Methods](#solution-of-non-linear-equations)
