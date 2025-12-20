@@ -875,7 +875,6 @@ add output here
 ### Simpson's One-Third Rule
 ---
 #### Theory
----
 
 
 Simpson’s 1/3 Rule is a numerical integration method used to approximate the definite integral of a function when an exact analytical solution is difficult or impossible to obtain. It provides higher accuracy than the Trapezoidal Rule by approximating the integrand using parabolic arcs instead of straight lines.
@@ -1128,7 +1127,7 @@ Integral of f(x) from -1 to 3 is: 5.33333
 
 ---
 
-#### ** Theory **
+#### Theory 
 
 
 
@@ -1185,7 +1184,6 @@ Then Simpson’s 3/8 Rule is given by:
 - Accuracy decreases for highly oscillatory functions
 
 
----
 
 
 #### Code
