@@ -873,7 +873,53 @@ add output here
 
 #### Theory
 
-*Add theory here*
+Simpson’s 1/3 Rule is a numerical integration method used to approximate the definite integral of a function when an exact analytical solution is difficult or impossible to obtain. It provides higher accuracy than the Trapezoidal Rule by approximating the integrand using parabolic arcs instead of straight lines.
+
+#### Basic Idea
+
+In Simpson’s 1/3 Rule, the interval [a, b] is divided into an even number of equal sub-intervals of width:
+
+h = (b − a) / n, where n is even
+
+The function values at these equally spaced points are used to construct quadratic polynomials over pairs of intervals. The area under each parabola is then calculated to approximate the total area under the curve.
+
+#### Mathematical Formula
+
+Let:
+
+x₀ = a  
+x₁ = a + h  
+x₂ = a + 2h  
+...  
+xₙ = b  
+
+and
+
+yᵢ = f(xᵢ)
+
+Then Simpson’s 1/3 Rule is given by:
+
+∫ₐᵇ f(x) dx ≈ (h / 3) [ y₀ + yₙ + 4(y₁ + y₃ + ... + yₙ₋₁) + 2(y₂ + y₄ + ... + yₙ₋₂) ]
+
+#### Conditions of Applicability
+
+- The number of sub-intervals must be even  
+- The data points must be equally spaced  
+- The function should be smooth and continuous over the interval  
+
+#### Advantages
+
+- Higher accuracy than the Trapezoidal Rule  
+- Simple and easy to apply  
+- Requires fewer intervals for good accuracy  
+
+#### Limitations
+
+- Cannot be applied when the number of intervals is odd  
+- Not suitable for unequally spaced data  
+- Accuracy decreases for highly oscillatory functions  
+
+```
 
 #### Code
 
