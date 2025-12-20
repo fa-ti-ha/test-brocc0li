@@ -877,6 +877,7 @@ add output here
 #### Theory
 ---
 
+
 Simpson’s 1/3 Rule is a numerical integration method used to approximate the definite integral of a function when an exact analytical solution is difficult or impossible to obtain. It provides higher accuracy than the Trapezoidal Rule by approximating the integrand using parabolic arcs instead of straight lines.
 
 #### Basic Idea
@@ -923,9 +924,10 @@ Then Simpson’s 1/3 Rule is given by:
 
 - Cannot be applied when the number of intervals is odd  
 - Not suitable for unequally spaced data  
-- Accuracy decreases for highly oscillatory functions  
+- Accuracy decreases for highly oscillatory functions
 
-```
+
+
 
 #### Code
 
@@ -1126,24 +1128,24 @@ Integral of f(x) from -1 to 3 is: 5.33333
 
 ---
 
-#### Theory
----
+#### ** Theory **
 
-```
+
+
 Simpson’s 3/8 Rule is a numerical integration method used to approximate the definite integral of a function when an exact analytical solution is difficult or impossible to obtain. It is an extension of Simpson’s 1/3 Rule and uses cubic polynomials (third-degree) to approximate the integrand, providing higher accuracy for certain functions.
-```
+
 
 #### Basic Idea
-```
+
 In Simpson’s 3/8 Rule, the interval [a, b] is divided into a multiple of 3 equal sub-intervals of width:
 
 h = (b − a) / n,  where n is a multiple of 3
 
 The function values at these equally spaced points are used to construct cubic polynomials over sets of three intervals. The area under each cubic curve is calculated to approximate the total integral.
-```
+
 
 #### Mathematical Formula
-```
+
 Let:
 
 x₀ = a
@@ -1160,30 +1162,31 @@ yᵢ = f(xᵢ)
 Then Simpson’s 3/8 Rule is given by:
 
 ∫ₐᵇ f(x) dx ≈ (3h / 8) [ y₀ + yₙ + 3(y₁ + y₂ + y₄ + y₅ + ... + yₙ₋₁ + yₙ₋₂) + 2(y₃ + y₆ + ... + yₙ₋₃) ]
-```
+
 
 #### Conditions of Applicability
-```
+
 - The number of sub-intervals must be a multiple of 3
 - The data points must be equally spaced
 - The function should be smooth and continuous over the interval
-```
+
 
 #### Advantages
-```
+
 - More accurate than the Trapezoidal Rule and 1/3 Rule for functions requiring cubic approximation
 - Can handle curves with higher-order behavior
 - Simple to apply for equally spaced data
-```
+
 
 #### Limitations
-```
+
 - Cannot be applied if the number of intervals is not a multiple of 3
 - Not suitable for unequally spaced data
 - Accuracy decreases for highly oscillatory functions
-```
+
 
 ---
+
 
 #### Code
 
