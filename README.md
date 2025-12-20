@@ -1477,7 +1477,67 @@ error is :0.315%
 
 #### Numerical Differentiation by Forward Interpolation Method Theory
 
-*Add theory here*
+ 
+Numerical Differentiation using Forward Interpolation is a technique to approximate derivatives of a function from equally spaced tabulated data. 
+It uses finite forward differences to construct formulas for the first, second, or higher-order derivatives. 
+This method is most accurate when the derivative is evaluated near the beginning of the data.
+
+
+#### Basic Idea
+
+Given a set of equally spaced data points:
+
+x₀, x₁, x₂, ..., xₙ
+and corresponding function values:
+
+f(x₀), f(x₁), f(x₂), ..., f(xₙ)
+
+We use forward differences (Δy, Δ²y, Δ³y, ...) to approximate derivatives at points near x₀. 
+The first derivative at x₀ can be approximated as:
+
+f'(x₀) ≈ (Δf₀)/h - (Δ²f₀)/(2h) + (Δ³f₀)/(3h) - ...  
+
+The second derivative at x₀ can be approximated as:
+
+f''(x₀) ≈ (Δ²f₀)/h² - (Δ³f₀)/h² + (11Δ⁴f₀)/(12h²) - ...
+
+
+#### Formula
+
+First derivative:  f'(x₀) ≈ Δf₀/h - Δ²f₀/(2h) + Δ³f₀/(3h) - ...  
+Second derivative: f''(x₀) ≈ Δ²f₀/h² - Δ³f₀/h² + 11Δ⁴f₀/(12h²) - ...
+
+
+#### Steps to Apply
+
+1. Compute forward differences Δf₀, Δ²f₀, ..., Δⁿf₀ from the given data.
+2. Choose the point near the beginning of the data for differentiation.
+3. Substitute the forward differences into the formulas for the first or second derivative.
+4. Compute the derivative using the step size h.
+
+
+#### Conditions of Applicability
+
+- Data points must be equally spaced.
+- The value for differentiation should lie near the beginning of the table.
+- Function should be continuous over the interval.
+
+
+#### Advantages
+
+- Simple and systematic for equally spaced data.
+- Forward differences reduce repeated calculations.
+- Good accuracy near the beginning of the data set.
+
+
+#### Limitations
+
+- Not suitable for unequally spaced data.
+- Accuracy decreases for points far from x₀.
+- Higher-order differences may introduce rounding errors.
+
+---
+
 
 #### Numerical Differentiation by Forward Interpolation Method Code
 
@@ -1505,7 +1565,62 @@ add output here
 
 #### Numerical Differentiation by Backward Interpolation Method Theory
 
-*Add theory here*
+ 
+Numerical Differentiation using Backward Interpolation is a technique to approximate derivatives of a function from equally spaced tabulated data. 
+It uses finite backward differences to construct formulas for the first, second, or higher-order derivatives. 
+This method is most accurate when the derivative is evaluated near the end of the data.
+ 
+
+#### Basic Idea
+Given a set of equally spaced data points:
+
+x₀, x₁, x₂, ..., xₙ
+and corresponding function values:
+
+f(x₀), f(x₁), f(x₂), ..., f(xₙ)
+
+We use backward differences (∇y, ∇²y, ∇³y, ...) to approximate derivatives at points near xₙ. 
+The first derivative at xₙ can be approximated as:
+
+f'(xₙ) ≈ (∇fₙ)/h + (∇²fₙ)/(2h) + (∇³fₙ)/(3h) + ...  
+
+The second derivative at xₙ can be approximated as:
+
+f''(xₙ) ≈ (∇²fₙ)/h² + (∇³fₙ)/h² + (11∇⁴fₙ)/(12h²) - ...
+ 
+
+#### Formula
+
+First derivative:  f'(xₙ) ≈ ∇fₙ/h + ∇²fₙ/(2h) + ∇³fₙ/(3h) + ...  
+Second derivative: f''(xₙ) ≈ ∇²fₙ/h² + ∇³fₙ/h² + 11∇⁴fₙ/(12h²) - ...
+ 
+#### Steps to Apply
+1. Compute backward differences ∇fₙ, ∇²fₙ, ..., ∇ⁿfₙ from the given data.
+2. Choose the point near the end of the data for differentiation.
+3. Substitute the backward differences into the formulas for the first or second derivative.
+4. Compute the derivative using the step size h.
+
+#### Conditions of Applicability
+
+- Data points must be equally spaced.
+- The value for differentiation should lie near the end of the table.
+- Function should be continuous over the interval.
+
+
+#### Advantages
+
+- Simple and systematic for equally spaced data.
+- Backward differences reduce repeated calculations.
+- Good accuracy near the end of the data set.
+
+
+#### Limitations
+
+- Not suitable for unequally spaced data.
+- Accuracy decreases for points far from xₙ.
+- Higher-order differences may introduce rounding errors.
+
+
 
 #### Numerical Differentiation by Backward Interpolation Method Code
 
