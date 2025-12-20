@@ -5,42 +5,118 @@
 * [Solution of Linear Equations](#solution-of-linear-equations)
 
   * [Gauss Elimination Method](#gauss-elimination-method)
+    - [Theory](#gauss-elimination-method-theory)
+    - [Code](#gauss-elimination-method-code)
+    - [Input](#gauss-elimination-method-input)
+    - [Output](#gauss-elimination-method-output)
   * [Gauss Jordan Elimination Method](#gauss-jordan-elimination-method)
+  * - [Theory](#gauss-jordan-elimination-method-theory)
+    - [Code](#gauss-jordan-elimination-method-code)
+    - [Input](#gauss-jordan-elimination-method-input)
+    - [Output](#gauss-jordan-elimination-method-output)
   * [LU Decomposition Method](#lu-decomposition-method)
+    - [Theory](#lu-decomposition-method-theory)
+    - [Code](#lu-decomposition-method-code)
+    - [Input](#lu-decomposition-method-input)
+    - [Output](#lu-decomposition-method-output)
   * [Matrix Inversion](#matrix-inversion)
+    - [Theory](#matrix-inversion-theory)
+    - [Code](#matrix-inversion-code)
+    - [Input](#matrix-inversion-input)
+    - [Output](#matrix-inversion-output)
 
 * [Solution of Non-Linear Equations](#solution-of-non-linear-equations)
 
   * [Bisection Method](#bisection-method)
+    - [Theory](#bisection-method-theory)
+    - [Code](#bisection-method-code)
+    - [Input](#bisection-method-input)
+    - [Output](#bisection-method-output)
   * [False Position Method](#false-position-method)
+    - [Theory](#false-position-method-theory)
+    - [Code](#false-position-method-code)
+    - [Input](#false-position-method-input)
+    - [Output](#false-position-method-output)
   * [Secant Method](#secant-method)
+    - [Theory](#secant-method-theory)
+    - [Code](#secant-method-code)
+    - [Input](#secant-method-input)
+    - [Output](#secant-method-output)
   * [Newton Raphson Method](#newton-raphson-method)
+    - [Theory](#newton-raphson-method-theory)
+    - [Code](#newton-raphson-method-code)
+    - [Input](#newton-raphson-method-input)
+    - [Output](#newton-raphson-method-output)
 
 * [Solution of Interpolation](#solution-of-interpolation)
 
   * [Newton's Forward Interpolation Method](#newtons-forward-interpolation-method)
+    - [Theory](#newtons-forward-interpolation-method-theory)
+    - [Code](#newtons-forward-interpolation-method-code)
+    - [Input](#newtons-forward-interpolation-method-input)
+    - [Output](#newtons-forward-interpolation-method-output)
   * [Newton's Backward Interpolation Method](#newtons-backward-interpolation-method)
+    - [Theory](#newtons-backward-interpolation-method-theory)
+    - [Code](#newtons-backward-interpolation-method-code)
+    - [Input](#newtons-backward-interpolation-method-input)
+    - [Output](#newtons-backward-interpolation-method-output)
   * [Newton's Divided Difference Method](#newtons-divided-difference-method)
+    - [Theory](#newtons-divided-difference-method-theory)
+    - [Code](#newtons-divided-difference-method-code)
+    - [Input](#newtons-divided-difference-method-input)
+    - [Output](#newtons-divided-difference-method-output)
 
 * [Solution of Ordinary Differential Equations (ODE)](#solution-of-ordinary-differential-equations-ode)
 
   * [Runge Kutta Method](#runge-kutta-method)
+    - [Theory](#runge-kutta-method-theory)
+    - [Code](#runge-kutta-method-code)
+    - [Input](#runge-kutta-method-input)
+    - [Output](#runge-kutta-method-output)
 
 * [Solution of Numerical Differentiation](#solution-of-numerical-differentiation)
 
   * [Numerical Differentiation by Forward Interpolation Method](#numerical-differentiation-by-forward-interpolation-method)
+    - [Theory](#numerical-differentiation-by-forward-interpolation-method-theory)
+    - [Code](#numerical-differentiation-by-forward-interpolation-method-code)
+    - [Input](#numerical-differentiation-by-forward-interpolation-method-input)
+    - [Output](#numerical-differentiation-by-forward-interpolation-method-output)
   * [Numerical Differentiation by Backward Interpolation Method](#numerical-differentiation-by-backward-interpolation-method)
+    - [Theory](#numerical-differentiation-by-backward-interpolation-method-theory)
+    - [Code](#numerical-differentiation-by-backward-interpolation-method-code)
+    - [Input](#numerical-differentiation-by-backward-interpolation-method-input)
+    - [Output](#numerical-differentiation-by-backward-interpolation-method-output)
 
 * [Solution of Numerical Integrations](#solution-of-numerical-integrations)
 
   * [Simpson's One-Third Rule](#simpsons-one-third-rule)
+    - [Theory](#simpsons-one-third-rule-theory)
+    - [Code](#simpsons-one-third-rule-code)
+    - [Input](#simpsons-one-third-rule-input)
+    - [Output](#simpsons-one-third-rule-output)
   * [Simpson's Three-Eighths Rule](#simpsons-three-eighths-rule)
+    - [Theory](#simpsons-three-eighths-rule-theory)
+    - [Code](#simpsons-three-eighths-rule-code)
+    - [Input](#simpsons-three-eighths-rule-input)
+    - [Output](#simpsons-three-eighths-rule-output)
 
 * [Solution of Curve Fitting Model](#solution-of-curve-fitting-model)
 
   * [Least Square Regression Method for Linear Equations](#least-square-regression-method-for-linear-equations)
+    - [Theory](#least-square-regression-method-for-linear-equations-theory)
+    - [Code](#least-square-regression-method-for-linear-equations-code)
+    - [Input](#least-square-regression-method-for-linear-equations-input)
+    - [Output](#least-square-regression-method-for-linear-equations-output)
   * [Least Square Regression Method for Transcendental Equations](#least-square-regression-method-for-transcendental-equations)
+    - [Theory](#least-square-regression-method-for-transcendental-equations-theory)
+    - [Code](#least-square-regression-method-for-transcendental-equations-code)
+    - [Input](#least-square-regression-method-for-transcendental-equations-input)
+    - [Output](#least-square-regression-method-for-transcendental-equations-output)
   * [Least Square Regression Method for Polynomial Equations](#least-square-regression-method-for-polynomial-equations)
+    - [Theory](#least-square-regression-method-for-polynomial-equations-theory)
+    - [Code](#least-square-regression-method-for-polynomial-equations-code)
+    - [Input](#least-square-regression-method-for-polynomial-equations-input)
+    - [Output](#least-square-regression-method-for-polynomial-equations-output)
 
 ---
 
@@ -51,23 +127,23 @@
 ### Gauss Elimination Method
 ---
 
-#### Theory
+#### Gauss Elimination Method Theory
 
 *Add theory here*
 
-#### Code
+#### Gauss Elimination Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Gauss Elimination Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Gauss Elimination Method Output
 
 ```
 add output here
@@ -78,23 +154,23 @@ add output here
 ### Gauss Jordan Elimination Method
 ---
 
-#### Theory
+#### Gauss Jordan Elimination Method Theory
 
 *Add theory here*
 
-#### Code
+#### Gauss Jordan Elimination Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Gauss Jordan Elimination Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Gauss Jordan Elimination Method Output
 
 ```
 add output here
@@ -105,23 +181,23 @@ add output here
 ### LU Decomposition Method
 ---
 
-#### Theory
+#### LU Decomposition Method Theory
 
 *Add theory here*
 
-#### Code
+#### LU Decomposition Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### LU Decomposition Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### LU Decomposition Method Output
 
 ```
 add output here
@@ -132,23 +208,23 @@ add output here
 ### Matrix Inversion
 ---
 
-#### Theory
+#### Matrix Inversion Theory
 
 *Add theory here*
 
-#### Code
+#### Matrix Inversion Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Matrix Inversion Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Matrix Inversion Output
 
 ```
 add output here
@@ -163,26 +239,201 @@ add output here
 ### Bisection Method
 ---
 
-#### Theory
+#### Bisection Method Theory
 
-*Add theory here*
+The bisection method is a numerical technique used to find a real root of a nonlinear equation f(x) = 0. It is based on the property that a continuous function changes sign over an interval containing a root. The method begins with two initial points that lie on opposite sides of the root and repeatedly reduces the interval to improve the approximation.
 
-#### Code
+The given equation is usually a polynomial of the form  
+aₙxⁿ + aₙ₋₁xⁿ⁻¹ + … + a₁x + a₀ = 0,  
+which is continuous over the chosen interval. At each iteration, the interval is divided into two equal parts, and the subinterval that contains the sign change is selected. This process is continued until the root is obtained within the desired accuracy.
+
+
+
+#### Basic Formula
+
+**Midpoint Calculation**
+```
+c = (a + b) / 2
+```
+
+#### Notation
+- `a,b` : endpoints of the interval
+- `c` : midpoint of the interval
+- `f(x)` : given nonlinear function
+- - `aₙ, aₙ₋₁, … , a₀` : coefficients of the polynomial
+- `n` : number of iterations
+
+#### Convergence Behavior
+
+With each iteration, the interval length is reduced by half. After n iterations, the maximum possible error becomes `(b − a) / 2ⁿ`. Hence, the bisection method shows linear convergence.
+
+#### Steps to Apply
+
+1. Select two values a and b such that `f(a)*f(b) < 0`.
+2. Calculate the midpoint `c = (a + b) / 2`.
+3. Evaluate `f(c)`.
+4. Replace a or b based on the sign of `f(c)`.
+5. Repeat until the required accuracy is achieved.
+
+
+#### Conditions of Applicability
+
+- The function must be continuous over the interval.
+- The initial interval must contain a sign change.
+- Only real roots can be determined.
+  
+
+#### Advantages
+
+- Simple and easy to understand.
+- Guaranteed convergence under proper conditions.
+- Stable and reliable for a wide range of problems.
+
+
+#### Limitations
+
+- Converges slowly compared to other methods.
+- Not suitable when very high accuracy is required quickly.
+- Cannot be used if the initial interval does not contain a sign change.
+
+
+
+
+
+#### Bisection Method Code
 
 ```cpp
-// add your code here
+#include <bits/stdc++.h>
+using namespace std;
+
+int degree;
+vector<double> coeff;
+
+double f(double x)
+{
+    double val = 0;
+    double d = degree;
+    int n = coeff.size();
+    for (int i = 0; i < n; i++)
+    {
+        val += coeff[i] * pow(x, d);
+        d--;
+    }
+    return val;
+}
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+
+    int t;
+    cin >> t;
+
+    for (int test = 1; test <= t; test++)
+    {
+        cout << "Test case : " << test << endl;
+
+        cin >> degree;
+        coeff.resize(degree + 1);
+        for (int i = 0; i <= degree; i++)
+            cin >> coeff[i];
+
+        double xmax = sqrt((coeff[1] / coeff[0]) * (coeff[1] / coeff[0])
+                           - 2 * (coeff[2] / coeff[0]));
+
+        double root = 0;
+        double e = 0.0001;
+
+        for (double i = -xmax; i <= xmax; i += 0.5)
+        {
+            double a = i;
+            double b = i + 0.5;
+
+            if (f(a) * f(b) < 0)
+            {
+                root++;
+                int it = 0;
+                double c;
+
+                do
+                {
+                    it++;
+                    c = (a + b) / 2.0;
+
+                    if (f(a) * f(c) < 0)
+                        b = c;
+                    else
+                        a = c;
+
+                } while (fabs(b - a) > e);
+
+                cout << "the root " << root << " is: " << c << endl;
+                cout << "search interval [" << i << "," << i + 0.5 << "]" << endl;
+                cout << "iteration is:" << it << endl << endl;
+            }
+        }
+        cout << endl;
+    }
+    return 0;
+}
 ```
 
-#### Input
+#### Bisection Method Input
 
 ```
-add input here
+3
+4
+1 0 -5 0 4
+3
+1 -6 11 -6
+2
+1 5 6
 ```
 
-#### Output
+#### Bisection Method Output
 
 ```
-add output here
+Test case : 1
+the root 1 is: -1.99999
+search interval [-2.16228,-1.66228]
+iteration is:13
+
+the root 2 is: -0.999985
+search interval [-1.16228,-0.662278]
+iteration is:13
+
+the root 3 is: 1.00001
+search interval [0.837722,1.33772]
+iteration is:13
+
+the root 4 is: 2.00001
+search interval [1.83772,2.33772]
+iteration is:13
+
+
+Test case : 2
+the root 1 is: 0.999981
+search interval [0.758343,1.25834]
+iteration is:13
+
+the root 2 is: 1.99998
+search interval [1.75834,2.25834]
+iteration is:13
+
+the root 3 is: 2.99998
+search interval [2.75834,3.25834]
+iteration is:13
+
+
+Test case : 3
+the root 1 is: -3.00002
+search interval [-3.10555,-2.60555]
+iteration is:13
+
+the root 2 is: -2.00002
+search interval [-2.10555,-1.60555]
+iteration is:13
 ```
 
 ---
@@ -190,26 +441,189 @@ add output here
 ### False Position Method
 ---
 
-#### Theory
+#### False Position Method Theory
 
-*Add theory here*
+The false position method, also known as the regula falsi method, is a numerical technique used to find a real root of a nonlinear equation f(x) = 0. It is based on the fact that a continuous function changes sign over an interval containing a root. The method starts with two initial points that lie on opposite sides of the root and improves the approximation using linear interpolation.
 
-#### Code
+The given equation is usually a polynomial of the form  
+aₙxⁿ + aₙ₋₁xⁿ⁻¹ + … + a₁x + a₀ = 0,  
+which is continuous over the chosen interval. Instead of dividing the interval equally, the false position method estimates the root by finding the point where the straight line joining the function values at the endpoints intersects the x-axis. The interval is then updated while keeping the root bracketed.
+
+#### Basic Formula
+
+**Root Approximation**
+
+```
+c = (a*f(b) - b*f(a)) / (f(b) - f(a))
+```
+
+
+#### Notation
+- `a, b` : endpoints of the interval  
+- `c` : approximate root  
+- `f(x)` : given nonlinear function
+- `aₙ, aₙ₋₁, … , a₀` : coefficients of the polynomial  
+- `f(a), f(b)` : function values at the endpoints  
+- `n` : number of iterations  
+
+#### Convergence Behavior
+
+The false position method generally converges faster than the bisection method because it uses function values to estimate the root. However, the convergence is linear and may slow down if one endpoint remains unchanged over several iterations.
+
+#### Steps to Apply
+
+1. Select two values a and b such that `f(a)*f(b) < 0`.
+2. Compute the approximation  
+   `c = (a*f(b) - b*f(a)) / (f(b) - f(a))`.
+3. Evaluate `f(c)`.
+4. Replace a or b based on the sign of `f(c)`.
+5. Repeat until the required accuracy is achieved.
+
+#### Conditions of Applicability
+
+- The function must be continuous over the interval.
+- The initial interval must contain a sign change.
+- Only real roots can be determined.
+
+#### Advantages
+
+- Faster convergence than the bisection method in many cases.
+- Guaranteed convergence when the root is bracketed.
+- Simple to implement.
+
+#### Limitations
+
+- Convergence may slow down if one endpoint remains fixed.
+- Still slower compared to Newton–Raphson type methods.
+- Requires a valid initial bracketing interval.
+
+
+
+#### False Position Method Code
 
 ```cpp
-// add your code here
+#include<bits/stdc++.h>
+using namespace std;
+int degree;
+vector<double>coeff(degree+1);
+ double f(double x){
+        double val=0;
+     double d=degree;
+     int n=coeff.size();
+     for(int i=0;i<n;i++){
+           //  cout<<degree<<endl;
+        double t=coeff[i]*(pow(x,d));
+        val+=t;
+        d--;
+     }
+
+   return val;
+ }
+int main(){
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+   int t;
+   cin>>t;
+   for(int test=1;test<=t;test++){
+
+   cout<<"Test case : "<<test<<endl;
+  // cout<<"please enter the degree of polynomial equation :";
+    cin>>degree;
+ coeff.resize(degree + 1);
+    //cout<<"please enter the coefficient of polynomial :";
+    for(int i=0;i<degree+1;i++)cin>>coeff[i];
+    double xmax=sqrt((coeff[1]/coeff[0])*(coeff[1]/coeff[0])-2*(coeff[2]/coeff[0]));
+  double a,b,c,root=0;
+  for(double i=-xmax;i<=xmax;i+=0.5){
+        a=i;
+      b=i+0.5;
+        double fa=f(a),fb=f(b);
+   // cout<<a<<" "<<b<<" "<<fa*fb<<endl;
+    if(fa*fb<0){
+       double it=0;
+       root++;
+   double e=0.0001;
+  do{
+        it++;
+
+     c=a-f(a)*((b-a)/(f(b)-f(a)));
+   // cout<<"a="<<a<<" f(a)="<<f(a)<<" b="<<b<<" f(b)="<<f(b)<<" c="<<c<<" f(c)="<<f(c)<<endl;
+    if(fabs(c)<=e) break;
+    if(f(c)*f(a)<0)b=c;
+    else a=c;
+  }while(fabs(f(c))> e && fabs(b-a)>e);
+   cout<<"the root "<< root<<" is: "<<c<<endl;
+    cout<<"search interval ["<<i<<","<<i+0.5<<"]"<<endl;
+    cout<<"iteration is:"<<it<<endl<<endl;
+    }
+  }
+  cout<<endl;
+   }
+ return 0;
+
+
+}
+
+
+
 ```
 
-#### Input
+#### False Position Method Input
 
 ```
-add input here
+3
+4
+1 0 -5 0 4
+3
+1 -6 11 -6
+2
+1 5 6
 ```
 
-#### Output
+#### False Position Method Output
 
 ```
-add output here
+Test case : 1
+the root 1 is: -2
+search interval [-2.16228,-1.66228]
+iteration is:8
+
+the root 2 is: -1
+search interval [-1.16228,-0.662278]
+iteration is:3
+
+the root 3 is: 1
+search interval [0.837722,1.33772]
+iteration is:3
+
+the root 4 is: 2
+search interval [1.83772,2.33772]
+iteration is:11
+
+
+Test case : 2
+the root 1 is: 1.00001
+search interval [0.758343,1.25834]
+iteration is:8
+
+the root 2 is: 1.99993
+search interval [1.75834,2.25834]
+iteration is:2
+
+the root 3 is: 2.99998
+search interval [2.75834,3.25834]
+iteration is:8
+
+
+Test case : 3
+the root 1 is: -2.99995
+search interval [-3.10555,-2.60555]
+iteration is:4
+
+the root 2 is: -2.00006
+search interval [-2.10555,-1.60555]
+iteration is:6
+
 ```
 
 ---
@@ -217,23 +631,23 @@ add output here
 ### Secant Method
 ---
 
-#### Theory
+#### Secant Method Theory
 
 *Add theory here*
 
-#### Code
+#### Secant Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Secant Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Secant Method Output
 
 ```
 add output here
@@ -244,23 +658,23 @@ add output here
 ### Newton Raphson Method
 ---
 
-#### Theory
+#### Newton Raphson Method Theory
 
 *Add theory here*
 
-#### Code
+#### Newton Raphson Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Newton Raphson Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Newton Raphson Method Output
 
 ```
 add output here
@@ -277,7 +691,7 @@ add output here
 ---
 
 
-#### Theory
+#### Newton's Forward Interpolation Method Theory
 
 
 Newton’s Forward Interpolation Method is a numerical technique used to estimate unknown values of a function from equally spaced tabulated data. 
@@ -358,7 +772,7 @@ P(x) = f₀ + uΔf₀ + u(u-1)/2! Δ²f₀ + u(u-1)(u-2)/3! Δ³f₀ + ... + u(u
 
 
 
-#### Code
+#### Newton's Forward Interpolation Method Code
 
 ```cpp
 #include <bits/stdc++.h>
@@ -448,7 +862,7 @@ int main()
 
 ```
 
-#### Input
+#### Newton's Forward Interpolation Method Input
 
 ```
 3
@@ -480,7 +894,7 @@ int main()
 60 70 45
 ```
 
-#### Output
+#### Newton's Forward Interpolation Method Output
 
 ```
 Test case : 1
@@ -549,7 +963,7 @@ error is:0.021
 
 ---
 
-#### Theory
+#### Newton's Backward Interpolation Method Theory
 
 Newton’s Backward Interpolation Method is a numerical technique used to estimate unknown values of a function from equally spaced tabulated data. 
 It constructs an interpolation polynomial using finite backward differences of the function values. 
@@ -628,7 +1042,7 @@ P(x) = fₙ + u∇fₙ + u(u+1)/2! ∇²fₙ + u(u+1)(u+2)/3! ∇³fₙ + ... + 
 - Higher-order differences may introduce rounding errors.
 
 
-#### Code
+#### Newton's Backward Interpolation Method Code
 
 ```cpp
 #include<bits/stdc++.h>
@@ -717,7 +1131,7 @@ int main()
 
 ```
 
-#### Input
+#### Newton's Backward Interpolation Method Input
 
 ```
 3
@@ -750,7 +1164,7 @@ int main()
 
 ```
 
-#### Output
+#### Newton's Backward Interpolation Method Output
 
 ```
 Test case : 1
@@ -794,7 +1208,7 @@ error is : 0.000
 
 ---
 
-#### Theory
+#### Newton's Divided Difference Method Theory
 
 Newton’s Divided Difference Interpolation Method is a numerical technique used to estimate unknown values of a function from a set of **unequally spaced data points**. 
 It constructs an interpolation polynomial using **divided differences** of the function values. 
@@ -893,7 +1307,7 @@ Where:
 
 
 
-#### Code
+#### Newton's Divided Difference Method Code
 
 ```cpp
 #include<bits/stdc++.h>
@@ -982,7 +1396,7 @@ cout << fixed << setprecision(3);
 
 ```
 
-#### Input
+#### Newton's Divided Difference Method Input
 
 ```
 3
@@ -1012,7 +1426,7 @@ cout << fixed << setprecision(3);
 
 ```
 
-#### Output
+#### Newton's Divided Difference Method Output
 
 ```
 Test case : 1
@@ -1061,23 +1475,23 @@ error is :0.315%
 
 ---
 
-#### Theory
+#### Numerical Differentiation by Forward Interpolation Method Theory
 
 *Add theory here*
 
-#### Code
+#### Numerical Differentiation by Forward Interpolation Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Numerical Differentiation by Forward Interpolation Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Numerical Differentiation by Forward Interpolation Method Output
 
 ```
 add output here
@@ -1089,23 +1503,23 @@ add output here
 
 ---
 
-#### Theory
+#### Numerical Differentiation by Backward Interpolation Method Theory
 
 *Add theory here*
 
-#### Code
+#### Numerical Differentiation by Backward Interpolation Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Numerical Differentiation by Backward Interpolation Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Numerical Differentiation by Backward Interpolation Method Output
 
 ```
 add output here
@@ -1122,23 +1536,23 @@ add output here
 ---
 
 
-#### Theory
+#### Runge Kutta Method Theory
 
 *Add theory here*
 
-#### Code
+#### Runge Kutta Method Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Runge Kutta Method Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Runge Kutta Method Output
 
 ```
 add output here
@@ -1155,7 +1569,7 @@ add output here
 ---
 
 
-#### Theory
+#### Simpson's One-Third Rule Theory
 
 
 Simpson’s 1/3 Rule is a numerical integration method used to approximate the definite integral of a function when an exact analytical solution is difficult or impossible to obtain. It provides higher accuracy than the Trapezoidal Rule by approximating the integrand using parabolic arcs instead of straight lines.
@@ -1209,7 +1623,7 @@ Then Simpson’s 1/3 Rule is given by:
 
 
 
-#### Code
+#### Simpson's One-Third Rule Code
 
 ```cpp
 #include <bits/stdc++.h>
@@ -1330,7 +1744,7 @@ int main()
 }
 ```
 
-#### Input
+#### Simpson's One-Third Rule Input
 
 ```
 
@@ -1373,7 +1787,7 @@ int main()
 
 ```
 
-#### Output
+#### Simpson's One-Third Rule Output
 
 ```
 Testcase: 1
@@ -1408,7 +1822,7 @@ Integral of f(x) from -1 to 3 is: 5.33333
 
 ---
 
-#### Theory 
+#### Simpson's Three-Eighths Rule Theory 
 
 
 
@@ -1467,7 +1881,7 @@ Then Simpson’s 3/8 Rule is given by:
 
 
 
-#### Code
+#### Simpson's Three-Eighths Rule Code
 
 ```cpp
 #include <bits/stdc++.h>
@@ -1545,7 +1959,7 @@ int main()
 
 ```
 
-#### Input
+#### Simpson's Three-Eighths Rule Input
 
 ```
 
@@ -1573,7 +1987,7 @@ int main()
 
 ```
 
-#### Output
+#### Simpson's Three-Eighths Rule Output
 
 ```
 Testcase: 1
@@ -1609,23 +2023,23 @@ Integral of f(x) from 0 to 5 is: 1.37267
 
 --- 
 
-#### Theory
+#### Least Square Regression Method for Linear Equations Theory
 
 *Add theory here*
 
-#### Code
+#### Least Square Regression Method for Linear Equations Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Least Square Regression Method for Linear Equations Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Least Square Regression Method for Linear Equations Output
 
 ```
 add output here
@@ -1637,23 +2051,23 @@ add output here
 
 ---
 
-#### Theory
+#### Least Square Regression Method for Transcendental Equations Theory
 
 *Add theory here*
 
-#### Code
+#### Least Square Regression Method for Transcendental Equations Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Least Square Regression Method for Transcendental Equations Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Least Square Regression Method for Transcendental Equations Output
 
 ```
 add output here
@@ -1665,23 +2079,23 @@ add output here
 
 ---
 
-#### Theory
+#### Least Square Regression Method for Polynomial Equations Theory
 
 *Add theory here*
 
-#### Code
+#### Least Square Regression Method for Polynomial Equations Code
 
 ```cpp
 // add your code here
 ```
 
-#### Input
+#### Least Square Regression Method for Polynomial Equations Input
 
 ```
 add input here
 ```
 
-#### Output
+#### Least Square Regression Method for Polynomial Equations Output
 
 ```
 add output here
