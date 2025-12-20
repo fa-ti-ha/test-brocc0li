@@ -871,6 +871,25 @@ P(x) = f(x₀)
 
 - Computationally more intensive for large datasets.
 - Accuracy may decrease for very high-order polynomials due to rounding errors.
+  
+
+### Error in Divided Difference Interpolation
+
+
+In Newton's Divided Difference interpolation, the interpolation polynomial of degree (n-1) is:
+
+P_{n-1}(x) = y₀ + (x - x₀)Δ₁ + (x - x₀)(x - x₁)Δ₂ + ...
+
+The theoretical interpolation error at a point x = val is:
+
+E(x) = f[x₀, x₁, ..., xₙ₋₁] * (x - x₀)(x - x₁)...(x - xₙ₋₂)
+
+
+Where:
+
+
+- f[x₀, x₁, ..., xₙ₋₁] is the highest-order divided difference.
+- The product term (x - x₀)(x - x₁)...(x - xₙ₋₂) increases if val is far from known data points, which increases the error.
 
 
 
