@@ -267,19 +267,186 @@ add output here
 #### Code
 
 ```cpp
-// add your code here
+#include <bits/stdc++.h>
+using namespace std;
+
+double forward_interpolation(vector<double> &x, vector<double> &y, int n, double xn)
+{
+    vector<vector<double>> dif(n, vector<double>(n, 0));
+    for (int i = 0; i < n; i++)
+        dif[i][0] = y[i];
+
+    for (int j = 1; j < n; j++)
+        for (int i = 0; i < n - j; i++)
+            dif[i][j] = dif[i + 1][j - 1] - dif[i][j - 1];
+
+    cout << "Forward difference table:" << endl;
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < n - i; j++)
+            cout << setw(12) << dif[i][j];
+        cout << endl;
+    }
+    cout << endl;
+
+    double h = x[1] - x[0];
+    double u = (xn - x[0]) / h;
+
+    double res = y[0];
+    double term = 1.0;
+    double fact = 1.0;
+
+    for (int i = 1; i < n; i++)
+    {
+        term *= (u - (i - 1));
+        fact *= i;
+        res += (term * dif[0][i]) / fact;
+    }
+    return res;
+}
+
+int main()
+{
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+
+    cout << fixed << setprecision(3);
+
+    int t;
+    cin >> t;
+    for (int test = 1; test <= t; test++)
+    {
+        cout << "Test case : " << test << endl;
+
+        int n;
+        cin >> n;
+        vector<double> x(n), y(n);
+
+        double sum = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int x1, x2, yf;
+            cin >> x1 >> x2 >> yf;
+            x[i] = x2;
+            sum += yf;
+            y[i] = sum;
+        }
+
+        int d1;
+        double xn;
+        cin >> d1 >> xn;
+
+        double res = forward_interpolation(x, y, n, xn);
+        cout << "the value of Y at " << d1 << "-" << xn << " : " << res << endl;
+
+        double ex1, ex2, ey;
+        cin >> ex1 >> ex2 >> ey;
+        sum += ey;
+        x.push_back(ex2);
+        y.push_back(sum);
+
+        double res2 = forward_interpolation(x, y, n + 1, xn);
+        cout << "error is:" << fabs(res2 - res) << endl
+             << endl;
+    }
+    return 0;
+}
+
 ```
 
 #### Input
 
 ```
-add input here
+3
+5
+30 40 31
+40 50 42
+50 60 51
+60 70 55
+70 80 31
+40 45
+80 90 25
+
+4
+10 20 15
+20 30 20
+30 40 18
+40 50 22
+20 25
+50 60 30
+
+6
+0 10 5
+10 20 9
+20 30 14
+30 40 20
+40 50 27
+50 60 35
+10 15
+60 70 45
 ```
 
 #### Output
 
 ```
-add output here
+Test case : 1
+Forward difference table:
+      31.000      42.000       9.000      -5.000     -23.000
+      73.000      51.000       4.000     -28.000
+     124.000      55.000     -24.000
+     179.000      31.000
+     210.000
+
+the value of Y at 40-45.000 : 51.461
+Forward difference table:
+      31.000      42.000       9.000      -5.000     -23.000      69.000
+      73.000      51.000       4.000     -28.000      46.000
+     124.000      55.000     -24.000      18.000
+     179.000      31.000      -6.000
+     210.000      25.000
+     235.000
+
+error is:1.887
+
+Test case : 2
+Forward difference table:
+      15.000      20.000      -2.000       6.000
+      35.000      18.000       4.000
+      53.000      22.000
+      75.000
+
+the value of Y at 20-25.000 : 25.625
+Forward difference table:
+      15.000      20.000      -2.000       6.000      -2.000
+      35.000      18.000       4.000       4.000
+      53.000      22.000       8.000
+      75.000      30.000
+     105.000
+
+error is:0.078
+
+Test case : 3
+Forward difference table:
+       5.000       9.000       5.000       1.000       0.000       0.000
+      14.000      14.000       6.000       1.000       0.000
+      28.000      20.000       7.000       1.000
+      48.000      27.000       8.000
+      75.000      35.000
+     110.000
+
+the value of Y at 10-15.000 : 8.938
+Forward difference table:
+       5.000       9.000       5.000       1.000       0.000       0.000       1.000
+      14.000      14.000       6.000       1.000       0.000       1.000
+      28.000      20.000       7.000       1.000       1.000
+      48.000      27.000       8.000       2.000
+      75.000      35.000      10.000
+     110.000      45.000
+     155.000
+
+error is:0.021
+
+
 ```
 
 ---
@@ -293,19 +460,161 @@ add output here
 #### Code
 
 ```cpp
-// add your code here
+#include<bits/stdc++.h>
+using namespace std;
+
+double error(vector<double>&x,vector<double>&y,double val)
+{
+    int n=x.size();
+    vector<vector<double>>dif(n,vector<double>(n));
+    for(int i=0;i<n;i++) dif[i][0]=y[i];
+    for(int j=1;j<n;j++)
+        for(int i=0;i<n-j;i++)
+            dif[i][j]=(dif[i+1][j-1]-dif[i][j-1])/(x[i+j]-x[i]);
+
+    double del=1.0;
+    for(int i=1;i<n;i++)
+        del*= (val-x[i-1]);
+
+    return dif[0][n-1]*del;
+}
+
+int main()
+{
+    freopen("input.txt","r",stdin);
+    freopen("output.txt","w",stdout);
+
+    cout<<fixed<<setprecision(3);
+
+    int t;
+    cin>>t;
+    for(int test=1;test<=t;test++)
+    {
+        cout<<"Test case : "<<test<<endl;
+
+        int n;
+        cin>>n;
+        vector<double>x(n),y(n);
+        for(int i=0;i<n;i++)
+            cin>>x[i]>>y[i];
+
+        vector<vector<double>>dif(n,vector<double>(n,0));
+        for(int i=0;i<n;i++)
+            dif[i][0]=y[i];
+
+        for(int j=1;j<n;j++)
+            for(int i=n-1;i>=j;i--)
+                dif[i][j]=dif[i][j-1]-dif[i-1][j-1];
+
+        cout<<"Backward difference table:"<<endl;
+        for(int i=0;i<n;i++)
+        {
+            for(int j=0;j<=i;j++)
+                cout<<setw(12)<<dif[i][j];
+            cout<<endl;
+        }
+        cout<<endl;
+
+        double xx;
+        cin>>xx;
+
+        double h=x[n-1]-x[n-2];
+        double v=(xx-x[n-1])/h;
+
+        double res=y[n-1];
+        double term=1.0;
+        double fact=1.0;
+
+        for(int i=1;i<n;i++)
+        {
+            term*=(v+i-1);
+            fact*=i;
+            res+=(term*dif[n-1][i])/fact;
+        }
+
+        cout<<"answer is : "<<res<<endl;
+
+        double nx,ny;
+        cin>>nx>>ny;
+        x.push_back(nx);
+        y.push_back(ny);
+
+        cout<<"error is : "<<fabs(error(x,y,xx))<<endl<<endl;
+    }
+    return 0;
+}
+
 ```
 
 #### Input
 
 ```
-add input here
+3
+5
+10 5
+20 9
+30 14
+40 20
+50 27
+45
+60 35
+
+4
+1 2
+2 4
+3 9
+4 16
+3
+5 25
+
+6
+0 1
+1 1
+2 2
+3 6
+4 24
+5 120
+4
+6 720
+
 ```
 
 #### Output
 
 ```
-add output here
+Test case : 1
+Backward difference table:
+       5.000
+       9.000       4.000
+      14.000       5.000       1.000
+      20.000       6.000       1.000       0.000
+      27.000       7.000       1.000       0.000       0.000
+
+answer is : 23.375
+error is : 0.000
+
+Test case : 2
+Backward difference table:
+       2.000
+       4.000       2.000
+       9.000       5.000       3.000
+      16.000       7.000       2.000      -1.000
+
+answer is : 9.000
+error is : 0.000
+
+Test case : 3
+Backward difference table:
+       1.000
+       1.000       0.000
+       2.000       1.000       1.000
+       6.000       4.000       3.000       2.000
+      24.000      18.000      14.000      11.000       9.000
+     120.000      96.000      78.000      64.000      53.000      44.000
+
+answer is : 24.000
+error is : 0.000
+
 ```
 
 ---
@@ -319,19 +628,159 @@ add output here
 #### Code
 
 ```cpp
-// add your code here
+#include<bits/stdc++.h>
+using namespace std;
+double error(vector<double>&x,vector<double>&y,double val)
+{
+    int n=x.size();
+    vector<vector<double>>dif(n,vector<double>(n));
+    for(int i=0; i<n; i++) dif[i][0]=y[i];
+    for(int j=1; j<n; j++)
+    {
+        for(int i=0; i<n-j; i++)
+        {
+            dif[i][j]=(dif[i+1][j-1]-dif[i][j-1])/(x[i+j]-x[i]);
+        }
+    }
+    double del=1.0;
+    for(int i=1; i<n; i++)
+    {
+        del=del*(val-x[i-1]);
+    }
+    double e=dif[0][n-1]*del;
+    return e;
+
+}
+double ddi(vector<double>x,vector<double>y,double val)
+{
+    int n=x.size();
+    vector<vector<double>>tb(n,vector<double>(n,0));
+    for(int i=0; i<n; i++) tb[i][0]=y[i];
+    for(int j=1; j<n; j++)
+    {
+        for(int i=0; i<n-j; i++)
+        {
+            tb[i][j]=(tb[i+1][j-1]-tb[i][j-1])/(x[i+j]-x[i]);
+        }
+    }
+    cout<<"divided difference table is :"<<endl;
+    for(int j=0; j<n; j++)
+    {
+        for(int i=0; i<n-j; i++)
+        {
+          if(i<n-j-1)  cout<<tb[i][j]<<setw(12);
+          else cout<<tb[i][j];
+        }
+        cout<<endl;
+    }
+    cout<<endl;
+    double res=y[0],del=1.0;
+
+    for(int i=1; i<n; i++)
+    {
+        del=del*(val-x[i-1]);
+        res+=del*tb[0][i];
+    }
+    return res;
+}
+int main()
+{
+//cout<<"ok"<<endl;
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+cout << fixed << setprecision(3);
+    int t;
+    cin>>t;
+    for(int test=1; test<=t; test++)
+    {
+
+        cout<<"Test case : "<<test<<endl;
+        int n;
+        cin>>n;
+        vector<double>x(n),y(n);
+        for(int i=0; i<n; i++)
+        {
+            cin>>x[i]>>y[i];
+        }
+//cout<<"enter the x:";
+        double val;
+        cin>>val;
+        double res1=ddi(x,y,val);
+        cout<<"value of y at x= "<<val<<" is :"<<res1<<endl;
+        cout<<"error is :"<<error(x,y,val)<<"%"<<endl<<endl;
+    }
+    return 0;
+}
+
 ```
 
 #### Input
 
 ```
-add input here
+3
+5
+1 1
+2.5 2
+4 4
+6 5
+7.5 7
+3.3
+
+4
+0 0
+1 2
+3 10
+4.5 20
+2.7
+
+6
+0 1
+0.5 2
+1.7 5
+3 6
+4.2 10
+6 20
+3.5
+
 ```
 
 #### Output
 
 ```
-add output here
+Test case : 1
+divided difference table is :
+1.000       2.000       4.000       5.000       7.000
+0.667       1.333       0.500       1.333
+0.222      -0.238       0.238
+-0.092       0.095
+0.029
+
+value of y at x= 3.300 is :3.161
+error is :0.100%
+
+Test case : 2
+divided difference table is :
+0.000       2.000      10.000      20.000
+2.000       4.000       6.667
+0.667       0.762
+0.021
+
+value of y at x= 2.700 is :8.431
+error is :-0.029%
+
+Test case : 3
+divided difference table is :
+1.000       2.000       5.000       6.000      10.000      20.000
+2.000       2.500       0.769       3.333       5.556
+0.294      -0.692       1.026       0.741
+-0.329       0.464      -0.066
+0.189      -0.096
+-0.048
+
+value of y at x= 3.500 is :6.973
+error is :0.315%
+
+
 ```
 
 ---
