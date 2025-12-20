@@ -20,7 +20,7 @@
 
   * [Newton's Forward Interpolation Method](#newtons-forward-interpolation-method)
   * [Newton's Backward Interpolation Method](#newtons-backward-interpolation-method)
-  * [Divided Difference Method](#divided-difference-method)
+  * [Newton's Divided Difference Method](#divided-difference-method)
 
 * [Solution of Ordinary Differential Equations (ODE)](#solution-of-ordinary-differential-equations-ode)
 
@@ -790,12 +790,89 @@ error is : 0.000
 
 ---
 
-### Divided Difference Method
+### Newton's Divided Difference Method
+
 ---
 
 #### Theory
 
-*Add theory here*
+Newton’s Divided Difference Interpolation Method is a numerical technique used to estimate unknown values of a function from a set of **unequally spaced data points**. 
+It constructs an interpolation polynomial using **divided differences** of the function values. 
+This method generalizes Newton's forward and backward methods and works for both equally and unequally spaced data.
+
+
+#### Basic Idea
+
+Given a set of data points:
+
+x₀, x₁, x₂, ..., xₙ
+and corresponding function values:
+
+f(x₀), f(x₁), f(x₂), ..., f(xₙ)
+
+We calculate **divided differences** (f[xᵢ, xⱼ], f[xᵢ, xⱼ, xₖ], ...) recursively and use them to form the interpolation polynomial. 
+Divided differences generalize forward/backward differences to unequally spaced points.
+
+
+#### Divided Difference Table
+
+The divided difference table organizes the differences systematically:
+
+| x   | f(x)   | 1st Divided Difference | 2nd Divided Difference | 3rd Divided Difference | ... |
+|-----|--------|----------------------|----------------------|----------------------|-----|
+| x₀  | f₀     | f[x₀,x₁]             | f[x₀,x₁,x₂]          | f[x₀,x₁,x₂,x₃]       | ... |
+| x₁  | f₁     | f[x₁,x₂]             | f[x₁,x₂,x₃]          | ...                  |     |
+| x₂  | f₂     | f[x₂,x₃]             | ...                   |                      |     |
+| x₃  | f₃     | ...                   |                      |                      |     |
+| ... | ...    |                      |                      |                      | ... |
+
+Where:
+
+1st Divided Difference: f[xᵢ, xᵢ₊₁] = (f(xᵢ₊₁) - f(xᵢ)) / (xᵢ₊₁ - xᵢ)  
+2nd Divided Difference: f[xᵢ, xᵢ₊₁, xᵢ₊₂] = (f[xᵢ₊₁, xᵢ₊₂] - f[xᵢ, xᵢ₊₁]) / (xᵢ₊₂ - xᵢ)  
+3rd Divided Difference: f[xᵢ, xᵢ₊₁, xᵢ₊₂, xᵢ₊₃] = (f[xᵢ₊₁, xᵢ₊₂, xᵢ₊₃] - f[xᵢ, xᵢ₊₁, xᵢ₊₂]) / (xᵢ₊₃ - xᵢ)  
+and so on.
+
+
+#### Formula
+
+Newton Divided Difference Polynomial:
+
+P(x) = f(x₀) 
+       + (x - x₀)f[x₀,x₁] 
+       + (x - x₀)(x - x₁)f[x₀,x₁,x₂] 
+       + (x - x₀)(x - x₁)(x - x₂)f[x₀,x₁,x₂,x₃] 
+       + ... 
+       + (x - x₀)(x - x₁)...(x - xₙ₋₁)f[x₀,x₁,...,xₙ]
+
+
+#### Steps to Apply
+
+1. Arrange the given data points in a table.
+2. Construct the divided difference table recursively.
+3. Use the top row of divided differences to construct the interpolation polynomial.
+4. Substitute the required value of x into the polynomial to find P(x).
+
+
+#### Conditions of Applicability
+
+- Data points can be equally or unequally spaced.
+- Function should be continuous over the interval.
+
+
+#### Advantages
+
+- Works for unequally spaced data points.
+- Systematic and can be extended to higher orders easily.
+- Provides an explicit polynomial for interpolation.
+
+
+#### Limitations
+
+- Computationally more intensive for large datasets.
+- Accuracy may decrease for very high-order polynomials due to rounding errors.
+
+
 
 #### Code
 
