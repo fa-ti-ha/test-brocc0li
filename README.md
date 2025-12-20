@@ -20,7 +20,7 @@
 
   * [Newton's Forward Interpolation Method](#newtons-forward-interpolation-method)
   * [Newton's Backward Interpolation Method](#newtons-backward-interpolation-method)
-  * [Newton's Divided Difference Method](#divided-difference-method)
+  * [Newton's Divided Difference Method](#newtons-divided-difference-method)
 
 * [Solution of Ordinary Differential Equations (ODE)](#solution-of-ordinary-differential-equations-ode)
 
