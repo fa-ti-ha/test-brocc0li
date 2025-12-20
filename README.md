@@ -46,8 +46,10 @@
 
 ## Solution of Linear Equations
 
+---
 
 ### Gauss Elimination Method
+---
 
 #### Theory
 
@@ -74,6 +76,7 @@ add output here
 ---
 
 ### Gauss Jordan Elimination Method
+---
 
 #### Theory
 
@@ -100,6 +103,7 @@ add output here
 ---
 
 ### LU Decomposition Method
+---
 
 #### Theory
 
@@ -126,6 +130,7 @@ add output here
 ---
 
 ### Matrix Inversion
+---
 
 #### Theory
 
@@ -153,7 +158,10 @@ add output here
 
 ## Solution of Non-Linear Equations
 
+---
+
 ### Bisection Method
+---
 
 #### Theory
 
@@ -180,6 +188,7 @@ add output here
 ---
 
 ### False Position Method
+---
 
 #### Theory
 
@@ -206,6 +215,7 @@ add output here
 ---
 
 ### Secant Method
+---
 
 #### Theory
 
@@ -232,6 +242,7 @@ add output here
 ---
 
 ### Newton Raphson Method
+---
 
 #### Theory
 
@@ -259,11 +270,93 @@ add output here
 
 ## Solution of Interpolation
 
+---
+
 ### Newton's Forward Interpolation Method
+
+---
+
 
 #### Theory
 
-*Add theory here*
+
+Newton’s Forward Interpolation Method is a numerical technique used to estimate unknown values of a function from equally spaced tabulated data. 
+It constructs an interpolation polynomial using finite forward differences of the function values. 
+It is most accurate when the value to be interpolated lies near the beginning of the data.
+
+
+#### Basic Idea
+
+Given a set of equally spaced data points:
+
+x₀, x₁, x₂, ..., xₙ
+and corresponding function values:
+
+f(x₀), f(x₁), f(x₂), ..., f(xₙ)
+
+We calculate **forward differences** (Δy, Δ²y, Δ³y, ...) and use them to form the interpolation polynomial.
+
+
+#### Forward Difference Table
+
+
+The forward difference table organizes the differences systematically:
+
+| x   | f(x)   | Δf(x)  | Δ²f(x) | Δ³f(x) | ... |
+|-----|--------|--------|--------|--------|-----|
+| x₀  | f₀     | Δf₀    | Δ²f₀   | Δ³f₀   | ... |
+| x₁  | f₁     | Δf₁    | Δ²f₁   | ...    |     |
+| x₂  | f₂     | Δf₂    | ...    |        |     |
+| x₃  | f₃     | ...    |        |        |     |
+| ... | ...    |        |        |        |     |
+
+Where:
+
+Δf₀ = f₁ - f₀  
+Δ²f₀ = Δf₁ - Δf₀  
+Δ³f₀ = Δ²f₁ - Δ²f₀  
+and so on.
+
+
+#### Formula
+
+Let h = x₁ - x₀  (equal spacing)
+Let u = (x - x₀) / h
+
+Newton Forward Interpolation Polynomial:
+
+P(x) = f₀ + uΔf₀ + u(u-1)/2! Δ²f₀ + u(u-1)(u-2)/3! Δ³f₀ + ... + u(u-1)...(u-n+1)/n! Δⁿf₀
+
+
+#### Steps to Apply
+
+1. Construct the forward difference table from the given data.
+2. Compute Δf₀, Δ²f₀, ..., Δⁿf₀.
+3. Calculate u = (x - x₀)/h for the required x.
+4. Substitute into the interpolation polynomial to find P(x).
+
+
+#### Conditions of Applicability
+
+- Data points must be equally spaced.
+- The value to be interpolated should lie near the beginning of the table.
+- Function should be continuous over the interval.
+  
+
+#### Advantages
+
+- Simple and systematic for equally spaced data.
+- Forward difference table reduces repeated calculations.
+- Good accuracy near the beginning of the data set.
+
+
+#### Limitations
+
+- Not suitable for unequally spaced data.
+- Accuracy decreases for values far from x₀.
+- Higher-order differences may introduce rounding errors.
+
+
 
 #### Code
 
@@ -454,9 +547,86 @@ error is:0.021
 
 ### Newton's Backward Interpolation Method
 
+---
+
 #### Theory
 
-*Add theory here*
+Newton’s Backward Interpolation Method is a numerical technique used to estimate unknown values of a function from equally spaced tabulated data. 
+It constructs an interpolation polynomial using finite backward differences of the function values. 
+It is most accurate when the value to be interpolated lies near the end of the data.
+
+
+#### Basic Idea
+
+Given a set of equally spaced data points:
+
+x₀, x₁, x₂, ..., xₙ
+and corresponding function values:
+
+f(x₀), f(x₁), f(x₂), ..., f(xₙ)
+
+We calculate backward differences (∇y, ∇²y, ∇³y, ...) and use them to form the interpolation polynomial.
+
+
+#### Backward Difference Table
+
+The backward difference table organizes the differences systematically:
+
+| x   | f(x)   | ∇f(x)  | ∇²f(x) | ∇³f(x) | ... |
+|-----|--------|--------|--------|--------|-----|
+| x₀  | f₀     |        |        |        |     |
+| x₁  | f₁     | ∇f₁    |        |        |     |
+| x₂  | f₂     | ∇f₂    | ∇²f₂   |        |     |
+| x₃  | f₃     | ∇f₃    | ∇²f₃   | ∇³f₃   |     |
+| ... | ...    | ...    | ...    | ...    | ... |
+| xₙ  | fₙ      | ∇fₙ    | ∇²fₙ   | ∇³fₙ    | ... |
+
+Where:
+
+∇fₙ = fₙ - fₙ₋₁  
+∇²fₙ = ∇fₙ - ∇fₙ₋₁  
+∇³fₙ = ∇²fₙ - ∇²fₙ₋₁  
+and so on.
+
+
+#### Formula
+
+Let h = x₁ - x₀  (equal spacing)
+Let u = (x - xₙ) / h
+
+Newton Backward Interpolation Polynomial:
+
+P(x) = fₙ + u∇fₙ + u(u+1)/2! ∇²fₙ + u(u+1)(u+2)/3! ∇³fₙ + ... + u(u+1)...(u+n-1)/n! ∇ⁿfₙ
+
+
+#### Steps to Apply
+
+1. Construct the backward difference table from the given data.
+2. Compute ∇fₙ, ∇²fₙ, ..., ∇ⁿfₙ.
+3. Calculate u = (x - xₙ)/h for the required x.
+4. Substitute into the interpolation polynomial to find P(x).
+
+
+#### Conditions of Applicability
+
+- Data points must be equally spaced.
+- The value to be interpolated should lie near the end of the table.
+- Function should be continuous over the interval.
+
+
+#### Advantages
+
+- Simple and systematic for equally spaced data.
+- Backward difference table reduces repeated calculations.
+- Good accuracy near the end of the data set.
+
+
+#### Limitations
+
+- Not suitable for unequally spaced data.
+- Accuracy decreases for values far from xₙ.
+- Higher-order differences may introduce rounding errors.
+
 
 #### Code
 
@@ -621,6 +791,7 @@ error is : 0.000
 ---
 
 ### Divided Difference Method
+---
 
 #### Theory
 
@@ -788,7 +959,11 @@ error is :0.315%
 
 ## Solution of Numerical Differentiation
 
+---
+
 ### Numerical Differentiation by Forward Interpolation Method
+
+---
 
 #### Theory
 
@@ -816,6 +991,8 @@ add output here
 
 ### Numerical Differentiation by Backward Interpolation Method
 
+---
+
 #### Theory
 
 *Add theory here*
@@ -842,7 +1019,12 @@ add output here
 
 ## Solution of Ordinary Differential Equations (ODE)
 
+---
+
 ### Runge Kutta Method
+
+---
+
 
 #### Theory
 
@@ -873,7 +1055,10 @@ add output here
 ---
 
 ### Simpson's One-Third Rule
+
 ---
+
+
 #### Theory
 
 
@@ -1322,7 +1507,11 @@ Integral of f(x) from 0 to 5 is: 1.37267
 
 ## Solution of Curve Fitting Model
 
+---
+
 ### Least Square Regression Method for Linear Equations
+
+--- 
 
 #### Theory
 
@@ -1350,6 +1539,8 @@ add output here
 
 ### Least Square Regression Method for Transcendental Equations
 
+---
+
 #### Theory
 
 *Add theory here*
@@ -1375,6 +1566,8 @@ add output here
 ---
 
 ### Least Square Regression Method for Polynomial Equations
+
+---
 
 #### Theory
 
